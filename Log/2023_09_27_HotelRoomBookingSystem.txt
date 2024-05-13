@@ -1,0 +1,920 @@
+========================================================================================================================
+
+Log Date:9/27/2023	10:43:18 AM
+
+Log Source:EntityFramework
+
+Log Page:17
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	10:43:25 AM
+
+Log Source:EntityFramework
+
+Log Page:18
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	1:39:59 PM
+
+Log Source:EntityFramework
+
+Log Page:1
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	1:40:02 PM
+
+Log Source:EntityFramework
+
+Log Page:2
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	1:40:07 PM
+
+Log Source:EntityFramework
+
+Log Page:3
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	1:40:12 PM
+
+Log Source:EntityFramework
+
+Log Page:4
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	1:40:38 PM
+
+Log Source:EntityFramework
+
+Log Page:18
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	2:59:33 PM
+
+Log Source:EntityFramework
+
+Log Page:1
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	2:59:37 PM
+
+Log Source:EntityFramework
+
+Log Page:2
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	2:59:42 PM
+
+Log Source:EntityFramework
+
+Log Page:2
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	2:59:49 PM
+
+Log Source:EntityFramework
+
+Log Page:2
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	2:59:53 PM
+
+Log Source:EntityFramework
+
+Log Page:2
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	2:59:57 PM
+
+Log Source:EntityFramework
+
+Log Page:6
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:00:01 PM
+
+Log Source:EntityFramework
+
+Log Page:6
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:00:05 PM
+
+Log Source:EntityFramework
+
+Log Page:6
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:00:09 PM
+
+Log Source:EntityFramework
+
+Log Page:6
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:00:14 PM
+
+Log Source:EntityFramework
+
+Log Page:10
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:00:19 PM
+
+Log Source:EntityFramework
+
+Log Page:11
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:00:24 PM
+
+Log Source:EntityFramework
+
+Log Page:12
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:00:29 PM
+
+Log Source:EntityFramework
+
+Log Page:13
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:00:40 PM
+
+Log Source:EntityFramework
+
+Log Page:15
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:00:53 PM
+
+Log Source:EntityFramework
+
+Log Page:16
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:00:57 PM
+
+Log Source:EntityFramework
+
+Log Page:17
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:02:49 PM
+
+Log Source:EntityFramework
+
+Log Page:1
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:02:52 PM
+
+Log Source:EntityFramework
+
+Log Page:3
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:03:05 PM
+
+Log Source:EntityFramework
+
+Log Page:4
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:03:09 PM
+
+Log Source:EntityFramework
+
+Log Page:5
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:12:09 PM
+
+Log Source:EntityFramework
+
+Log Page:1
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:12:13 PM
+
+Log Source:EntityFramework
+
+Log Page:2
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:13:38 PM
+
+Log Source:EntityFramework
+
+Log Page:7
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:13:42 PM
+
+Log Source:EntityFramework
+
+Log Page:8
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:13:46 PM
+
+Log Source:EntityFramework
+
+Log Page:9
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:14:02 PM
+
+Log Source:EntityFramework
+
+Log Page:14
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:14:16 PM
+
+Log Source:EntityFramework
+
+Log Page:14
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:46:33 PM
+
+Log Source:EntityFramework
+
+Log Page:2
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:46:38 PM
+
+Log Source:EntityFramework
+
+Log Page:1
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:59:39 PM
+
+Log Source:EntityFramework
+
+Log Page:2
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.RoomsInfoesController.Edit(RoomsInfo roomsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\RoomsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:59:45 PM
+
+Log Source:EntityFramework
+
+Log Page:1
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.RoomsInfoesController.Edit(RoomsInfo roomsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\RoomsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	3:59:59 PM
+
+Log Source:EntityFramework
+
+Log Page:29
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.RoomsInfoesController.Edit(RoomsInfo roomsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\RoomsInfoesController.cs:line 174
+
+========================================================================================================================
+
+========================================================================================================================
+
+Log Date:9/27/2023	4:00:15 PM
+
+Log Source:EntityFramework
+
+Log Page:1
+
+Log User:0
+
+Error Message:An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+
+Error Stack:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at HotelRoomBookingSystem.Controllers.ClientsInfoesController.Edit(ClientsInfo clientsInfo) in D:\LEC_MVC.NET\HotelRoomBookingSystem\HotelRoomBookingSystem\Controllers\ClientsInfoesController.cs:line 174
+
+========================================================================================================================
+
