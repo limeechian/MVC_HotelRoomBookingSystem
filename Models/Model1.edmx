@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LEC2023Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BookingRoomsDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BookingId" Type="bigint" Nullable="false" />
+          <Property Name="RoomId" Type="bigint" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="ModifiedAt" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Status" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookingsInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientId" Type="bigint" Nullable="false" />
+          <Property Name="BookingDate" Type="date" />
+          <Property Name="CheckInDate" Type="date" />
+          <Property Name="CheckOutDate" Type="date" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="ModifiedAt" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Status" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClientsInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ClientIcPassport" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientPhoneNumber" Type="nvarchar" MaxLength="30" />
+          <Property Name="ClientEmail" Type="nvarchar" MaxLength="150" />
+          <Property Name="ClientGender" Type="nvarchar" MaxLength="10" />
+          <Property Name="ClientBirthDate" Type="date" />
+          <Property Name="ClientAddress" Type="nvarchar(max)" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="ModifiedAt" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Status" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoomsInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoomFloor" Type="nvarchar" MaxLength="25" />
+          <Property Name="RoomUnitPrice" Type="int" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="ModifiedAt" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Status" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StaffsInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SystemLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogDate" Type="datetime" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Source" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Message" Type="text" />
+          <Property Name="StackTrace" Type="text" />
+          <Property Name="Parameters" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__BookingRo__Modif__2645B050">
+          <End Role="BookingsInfo" Type="Self.BookingsInfo" Multiplicity="1" />
+          <End Role="BookingRoomsDetails" Type="Self.BookingRoomsDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BookingsInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BookingRoomsDetails">
+              <PropertyRef Name="BookingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="TSF_ConvertRoomIdsToBigIntList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoomIds" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ConvertedRoomIds" Type="nvarchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="TSF_SqlCatchError" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Parameters" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Type" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_BookingRoomsDetails_GetByStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Status" Type="smallint" Mode="In" />
+        </Function>
+        <Function Name="USP_BookingsInfo_BookingRoomsDetails_DeleteById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BookingId" Type="bigint" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="USP_BookingsInfo_BookingRoomsDetails_GetByCheckInCheckOutDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CheckInDate" Type="date" Mode="In" />
+          <Parameter Name="CheckOutDate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_BookingsInfo_BookingRoomsDetails_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ClientId" Type="bigint" Mode="In" />
+          <Parameter Name="CheckInDate" Type="date" Mode="In" />
+          <Parameter Name="CheckOutDate" Type="date" Mode="In" />
+          <Parameter Name="RoomIds" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="USP_BookingsInfo_BookingRoomsDetails_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CheckInDate" Type="date" Mode="In" />
+          <Parameter Name="CheckOutDate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_BookingsInfo_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BookingID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="USP_BookingsInfo_GetByStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Status" Type="smallint" Mode="In" />
+        </Function>
+        <Function Name="USP_ClientsInfo_DeleteById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ClientID" Type="bigint" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="USP_ClientsInfo_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ClientID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="USP_ClientsInfo_GetByStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Status" Type="smallint" Mode="In" />
+        </Function>
+        <Function Name="USP_ClientsInfo_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ClientName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClientIcPassport" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClientPhoneNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClientEmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClientGender" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClientBirthDate" Type="date" Mode="In" />
+          <Parameter Name="ClientAddress" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="USP_ClientsInfo_UpdateById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ClientID" Type="bigint" Mode="In" />
+          <Parameter Name="ClientName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClientIcPassport" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClientPhoneNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClientEmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClientGender" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClientBirthDate" Type="date" Mode="In" />
+          <Parameter Name="ClientAddress" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="USP_RoomsInfo_DeleteById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoomID" Type="bigint" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="USP_RoomsInfo_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoomId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="USP_RoomsInfo_GetByStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Status" Type="smallint" Mode="In" />
+        </Function>
+        <Function Name="USP_RoomsInfo_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoomFloor" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoomUnitPrice" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="USP_RoomsInfo_UpdateById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoomID" Type="int" Mode="In" />
+          <Parameter Name="RoomFloor" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoomUnitPrice" Type="int" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+        </Function>
+        <EntityContainer Name="LEC2023ModelStoreContainer">
+          <EntitySet Name="BookingRoomsDetails" EntityType="Self.BookingRoomsDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BookingsInfo" EntityType="Self.BookingsInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientsInfo" EntityType="Self.ClientsInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoomsInfo" EntityType="Self.RoomsInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StaffsInfo" EntityType="Self.StaffsInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemLog" EntityType="Self.SystemLog" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__BookingRo__Modif__2645B050" Association="Self.FK__BookingRo__Modif__2645B050">
+            <End Role="BookingsInfo" EntitySet="BookingsInfo" />
+            <End Role="BookingRoomsDetails" EntitySet="BookingRoomsDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LEC2023Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BookingRoomsDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookingId" Type="Int64" Nullable="false" />
+          <Property Name="RoomId" Type="Int64" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="ModifiedAt" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Status" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="BookingsInfo" Relationship="Self.FK__BookingRo__Modif__2645B050" FromRole="BookingRoomsDetails" ToRole="BookingsInfo" />
+        </EntityType>
+        <EntityType Name="BookingsInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="Int64" Nullable="false" />
+          <Property Name="BookingDate" Type="DateTime" Precision="0" />
+          <Property Name="CheckInDate" Type="DateTime" Precision="0" />
+          <Property Name="CheckOutDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="ModifiedAt" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Status" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="BookingRoomsDetails" Relationship="Self.FK__BookingRo__Modif__2645B050" FromRole="BookingsInfo" ToRole="BookingRoomsDetails" />
+        </EntityType>
+        <EntityType Name="ClientsInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ClientIcPassport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientPhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ClientEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ClientGender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ClientBirthDate" Type="DateTime" Precision="0" />
+          <Property Name="ClientAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="ModifiedAt" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Status" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoomsInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomFloor" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="RoomUnitPrice" Type="Int32" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="ModifiedAt" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Status" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StaffsInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SystemLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StackTrace" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Parameters" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__BookingRo__Modif__2645B050">
+          <End Role="BookingsInfo" Type="Self.BookingsInfo" Multiplicity="1" />
+          <End Role="BookingRoomsDetails" Type="Self.BookingRoomsDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BookingsInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BookingRoomsDetails">
+              <PropertyRef Name="BookingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LEC2023Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BookingRoomsDetails" EntityType="Self.BookingRoomsDetail" />
+          <EntitySet Name="BookingsInfoes" EntityType="Self.BookingsInfo" />
+          <EntitySet Name="ClientsInfoes" EntityType="Self.ClientsInfo" />
+          <EntitySet Name="RoomsInfoes" EntityType="Self.RoomsInfo" />
+          <EntitySet Name="StaffsInfoes" EntityType="Self.StaffsInfo" />
+          <EntitySet Name="SystemLogs" EntityType="Self.SystemLog" />
+          <AssociationSet Name="FK__BookingRo__Modif__2645B050" Association="Self.FK__BookingRo__Modif__2645B050">
+            <End Role="BookingsInfo" EntitySet="BookingsInfoes" />
+            <End Role="BookingRoomsDetails" EntitySet="BookingRoomsDetails" />
+          </AssociationSet>
+          <FunctionImport Name="TSF_ConvertRoomIdsToBigIntList">
+            <Parameter Name="RoomIds" Mode="In" Type="String" />
+            <Parameter Name="ConvertedRoomIds" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TSF_SqlCatchError">
+            <Parameter Name="Parameters" Mode="In" Type="String" />
+            <Parameter Name="Type" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_BookingRoomsDetails_GetByStatus" ReturnType="Collection(LEC2023Model.USP_BookingRoomsDetails_GetByStatus_Result)">
+          <Parameter Name="Status" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="USP_BookingsInfo_BookingRoomsDetails_DeleteById" ReturnType="Collection(LEC2023Model.USP_BookingsInfo_BookingRoomsDetails_DeleteById_Result)">
+            <Parameter Name="BookingId" Mode="In" Type="Int64" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_BookingsInfo_BookingRoomsDetails_Insert" ReturnType="Collection(LEC2023Model.USP_BookingsInfo_BookingRoomsDetails_Insert_Result)">
+            <Parameter Name="ClientId" Mode="In" Type="Int64" />
+            <Parameter Name="CheckInDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CheckOutDate" Mode="In" Type="DateTime" />
+            <Parameter Name="RoomIds" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_BookingsInfo_BookingRoomsDetails_Select" ReturnType="Collection(LEC2023Model.USP_BookingsInfo_BookingRoomsDetails_Select_Result)">
+            <Parameter Name="CheckInDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CheckOutDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_BookingsInfo_GetById" ReturnType="Collection(LEC2023Model.USP_BookingsInfo_GetById_Result)">
+          <Parameter Name="BookingID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_BookingsInfo_GetByStatus" ReturnType="Collection(LEC2023Model.USP_BookingsInfo_GetByStatus_Result)">
+          <Parameter Name="Status" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="USP_CheckRoomAvailability_GetByCheckInCheckOutDate" ReturnType="Collection(Int64)">
+            <Parameter Name="CheckInDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CheckOutDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_ClientsInfo_DeleteById" ReturnType="Collection(LEC2023Model.USP_ClientsInfo_DeleteById_Result)">
+            <Parameter Name="ClientID" Mode="In" Type="Int64" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_ClientsInfo_GetById" ReturnType="Collection(LEC2023Model.USP_ClientsInfo_GetById_Result)">
+          <Parameter Name="ClientID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_ClientsInfo_GetByStatus" ReturnType="Collection(LEC2023Model.USP_ClientsInfo_GetByStatus_Result)">
+          <Parameter Name="Status" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="USP_ClientsInfo_Insert" ReturnType="Collection(LEC2023Model.USP_ClientsInfo_Insert_Result)">
+            <Parameter Name="ClientName" Mode="In" Type="String" />
+            <Parameter Name="ClientIcPassport" Mode="In" Type="String" />
+            <Parameter Name="ClientPhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="ClientEmail" Mode="In" Type="String" />
+            <Parameter Name="ClientGender" Mode="In" Type="String" />
+            <Parameter Name="ClientBirthDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ClientAddress" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_ClientsInfo_UpdateById" ReturnType="Collection(LEC2023Model.USP_ClientsInfo_UpdateById_Result)">
+            <Parameter Name="ClientID" Mode="In" Type="Int64" />
+            <Parameter Name="ClientName" Mode="In" Type="String" />
+            <Parameter Name="ClientIcPassport" Mode="In" Type="String" />
+            <Parameter Name="ClientPhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="ClientEmail" Mode="In" Type="String" />
+            <Parameter Name="ClientGender" Mode="In" Type="String" />
+            <Parameter Name="ClientBirthDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ClientAddress" Mode="In" Type="String" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_RoomsInfo_DeleteById" ReturnType="Collection(LEC2023Model.USP_RoomsInfo_DeleteById_Result)">
+            <Parameter Name="RoomID" Mode="In" Type="Int64" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_RoomsInfo_GetById" ReturnType="Collection(LEC2023Model.USP_RoomsInfo_GetById_Result)">
+          <Parameter Name="RoomId" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_RoomsInfo_GetByStatus" ReturnType="Collection(LEC2023Model.USP_RoomsInfo_GetByStatus_Result)">
+          <Parameter Name="Status" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="USP_RoomsInfo_Insert" ReturnType="Collection(LEC2023Model.USP_RoomsInfo_Insert_Result)">
+            <Parameter Name="RoomFloor" Mode="In" Type="String" />
+            <Parameter Name="RoomUnitPrice" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_RoomsInfo_UpdateById" ReturnType="Collection(LEC2023Model.USP_RoomsInfo_UpdateById_Result)">
+            <Parameter Name="RoomID" Mode="In" Type="Int32" />
+            <Parameter Name="RoomFloor" Mode="In" Type="String" />
+            <Parameter Name="RoomUnitPrice" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_BookingsInfo_BookingRoomsDetails_GetByCheckInCheckOutDate" ReturnType="Collection(LEC2023Model.USP_BookingsInfo_BookingRoomsDetails_GetByCheckInCheckOutDate_Result)">
+            <Parameter Name="CheckInDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CheckOutDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="USP_BookingRoomsDetails_GetByStatus_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="BookingId" Nullable="false" />
+          <Property Type="Int64" Name="RoomId" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModifiedAt" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+          <Property Type="Int16" Name="Status" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_BookingsInfo_BookingRoomsDetails_DeleteById_Result">
+          <Property Type="Int32" Name="ReturnCode" Nullable="true" />
+          <Property Type="String" Name="ReturnMessage" Nullable="true" />
+          <Property Type="String" Name="ReturnParam" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_BookingsInfo_BookingRoomsDetails_Insert_Result">
+          <Property Type="Int32" Name="ReturnCode" Nullable="true" />
+          <Property Type="String" Name="ReturnMessage" Nullable="true" />
+          <Property Type="String" Name="ReturnParam" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_BookingsInfo_BookingRoomsDetails_Select_Result">
+          <Property Type="Int64" Name="BookingId" Nullable="false" />
+          <Property Type="Int64" Name="ClientId" Nullable="false" />
+          <Property Type="Int64" Name="Occupied_RoomId_s_" Nullable="false" />
+          <Property Type="DateTime" Name="CheckInDate" Nullable="true" />
+          <Property Type="DateTime" Name="CheckOutDate" Nullable="true" />
+          <Property Type="DateTime" Name="BookingDate" Nullable="true" />
+          <Property Type="Int16" Name="Status" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_BookingsInfo_GetById_Result">
+          <Property Type="Int64" Name="Booking_ID" Nullable="false" />
+          <Property Type="Int64" Name="Client_ID" Nullable="false" />
+          <Property Type="Int64" Name="Room_ID" Nullable="false" />
+          <Property Type="String" Name="Room_Floor" Nullable="true" MaxLength="25" />
+          <Property Type="Int32" Name="Room_Unit_Price" Nullable="true" />
+          <Property Type="DateTime" Name="Booking_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Check_In_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Check_Out_Date" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_BookingsInfo_GetByStatus_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="ClientId" Nullable="false" />
+          <Property Type="DateTime" Name="BookingDate" Nullable="true" />
+          <Property Type="DateTime" Name="CheckInDate" Nullable="true" />
+          <Property Type="DateTime" Name="CheckOutDate" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModifiedAt" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+          <Property Type="Int16" Name="Status" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_ClientsInfo_DeleteById_Result">
+          <Property Type="Int32" Name="ReturnCode" Nullable="true" />
+          <Property Type="String" Name="ReturnMessage" Nullable="true" />
+          <Property Type="String" Name="ReturnParam" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_ClientsInfo_GetById_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="IC_Passport" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Phone_No_" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="BOD" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" />
+          <Property Type="Int16" Name="Status" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_ClientsInfo_GetByStatus_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="String" Name="ClientName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ClientIcPassport" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ClientPhoneNumber" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="ClientEmail" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="ClientGender" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="ClientBirthDate" Nullable="true" />
+          <Property Type="String" Name="ClientAddress" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModifiedAt" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+          <Property Type="Int16" Name="Status" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_ClientsInfo_Insert_Result">
+          <Property Type="Int32" Name="ReturnCode" Nullable="true" />
+          <Property Type="String" Name="ReturnMessage" Nullable="true" />
+          <Property Type="String" Name="ReturnParam" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_ClientsInfo_UpdateById_Result">
+          <Property Type="Int32" Name="ReturnCode" Nullable="true" />
+          <Property Type="String" Name="ReturnMessage" Nullable="true" />
+          <Property Type="String" Name="ReturnParam" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_RoomsInfo_DeleteById_Result">
+          <Property Type="Int32" Name="ReturnCode" Nullable="true" />
+          <Property Type="String" Name="ReturnMessage" Nullable="true" />
+          <Property Type="String" Name="ReturnParam" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_RoomsInfo_GetById_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="String" Name="RoomFloor" Nullable="true" MaxLength="25" />
+          <Property Type="Int32" Name="RoomUnitPrice" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModifiedAt" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+          <Property Type="Int16" Name="Status" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_RoomsInfo_GetByStatus_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="String" Name="RoomFloor" Nullable="true" MaxLength="25" />
+          <Property Type="Int32" Name="RoomUnitPrice" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModifiedAt" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+          <Property Type="Int16" Name="Status" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_RoomsInfo_Insert_Result">
+          <Property Type="Int32" Name="ReturnCode" Nullable="true" />
+          <Property Type="String" Name="ReturnMessage" Nullable="true" />
+          <Property Type="String" Name="ReturnParam" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_RoomsInfo_UpdateById_Result">
+          <Property Type="Int32" Name="ReturnCode" Nullable="true" />
+          <Property Type="String" Name="ReturnMessage" Nullable="true" />
+          <Property Type="String" Name="ReturnParam" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_BookingsInfo_BookingRoomsDetails_GetByCheckInCheckOutDate_Result">
+          <Property Type="Int64" Name="AvailableRoomIds" Nullable="false" />
+          <Property Type="String" Name="RoomFloor" Nullable="true" MaxLength="25" />
+          <Property Type="Int32" Name="RoomUnitPrice" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LEC2023ModelStoreContainer" CdmEntityContainer="LEC2023Entities">
+          <EntitySetMapping Name="BookingRoomsDetails">
+            <EntityTypeMapping TypeName="LEC2023Model.BookingRoomsDetail">
+              <MappingFragment StoreEntitySet="BookingRoomsDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+                <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookingsInfoes">
+            <EntityTypeMapping TypeName="LEC2023Model.BookingsInfo">
+              <MappingFragment StoreEntitySet="BookingsInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+                <ScalarProperty Name="CheckInDate" ColumnName="CheckInDate" />
+                <ScalarProperty Name="CheckOutDate" ColumnName="CheckOutDate" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientsInfoes">
+            <EntityTypeMapping TypeName="LEC2023Model.ClientsInfo">
+              <MappingFragment StoreEntitySet="ClientsInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ClientIcPassport" ColumnName="ClientIcPassport" />
+                <ScalarProperty Name="ClientPhoneNumber" ColumnName="ClientPhoneNumber" />
+                <ScalarProperty Name="ClientEmail" ColumnName="ClientEmail" />
+                <ScalarProperty Name="ClientGender" ColumnName="ClientGender" />
+                <ScalarProperty Name="ClientBirthDate" ColumnName="ClientBirthDate" />
+                <ScalarProperty Name="ClientAddress" ColumnName="ClientAddress" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoomsInfoes">
+            <EntityTypeMapping TypeName="LEC2023Model.RoomsInfo">
+              <MappingFragment StoreEntitySet="RoomsInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RoomFloor" ColumnName="RoomFloor" />
+                <ScalarProperty Name="RoomUnitPrice" ColumnName="RoomUnitPrice" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffsInfoes">
+            <EntityTypeMapping TypeName="LEC2023Model.StaffsInfo">
+              <MappingFragment StoreEntitySet="StaffsInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemLogs">
+            <EntityTypeMapping TypeName="LEC2023Model.SystemLog">
+              <MappingFragment StoreEntitySet="SystemLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="TSF_ConvertRoomIdsToBigIntList" FunctionName="LEC2023Model.Store.TSF_ConvertRoomIdsToBigIntList" />
+          <FunctionImportMapping FunctionImportName="TSF_SqlCatchError" FunctionName="LEC2023Model.Store.TSF_SqlCatchError" />
+          <FunctionImportMapping FunctionImportName="USP_BookingRoomsDetails_GetByStatus" FunctionName="LEC2023Model.Store.USP_BookingRoomsDetails_GetByStatus">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_BookingRoomsDetails_GetByStatus_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+                <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_BookingsInfo_BookingRoomsDetails_DeleteById" FunctionName="LEC2023Model.Store.USP_BookingsInfo_BookingRoomsDetails_DeleteById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_BookingsInfo_BookingRoomsDetails_DeleteById_Result">
+                <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+                <ScalarProperty Name="ReturnMessage" ColumnName="ReturnMessage" />
+                <ScalarProperty Name="ReturnParam" ColumnName="ReturnParam" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_BookingsInfo_BookingRoomsDetails_Insert" FunctionName="LEC2023Model.Store.USP_BookingsInfo_BookingRoomsDetails_Insert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_BookingsInfo_BookingRoomsDetails_Insert_Result">
+                <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+                <ScalarProperty Name="ReturnMessage" ColumnName="ReturnMessage" />
+                <ScalarProperty Name="ReturnParam" ColumnName="ReturnParam" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_BookingsInfo_BookingRoomsDetails_Select" FunctionName="LEC2023Model.Store.USP_BookingsInfo_BookingRoomsDetails_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_BookingsInfo_BookingRoomsDetails_Select_Result">
+                <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="Occupied_RoomId_s_" ColumnName="Occupied RoomId(s)" />
+                <ScalarProperty Name="CheckInDate" ColumnName="CheckInDate" />
+                <ScalarProperty Name="CheckOutDate" ColumnName="CheckOutDate" />
+                <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_BookingsInfo_GetById" FunctionName="LEC2023Model.Store.USP_BookingsInfo_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_BookingsInfo_GetById_Result">
+                <ScalarProperty Name="Booking_ID" ColumnName="Booking ID" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client ID" />
+                <ScalarProperty Name="Room_ID" ColumnName="Room ID" />
+                <ScalarProperty Name="Room_Floor" ColumnName="Room Floor" />
+                <ScalarProperty Name="Room_Unit_Price" ColumnName="Room Unit Price" />
+                <ScalarProperty Name="Booking_Date" ColumnName="Booking Date" />
+                <ScalarProperty Name="Check_In_Date" ColumnName="Check In Date" />
+                <ScalarProperty Name="Check_Out_Date" ColumnName="Check Out Date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_BookingsInfo_GetByStatus" FunctionName="LEC2023Model.Store.USP_BookingsInfo_GetByStatus">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_BookingsInfo_GetByStatus_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+                <ScalarProperty Name="CheckInDate" ColumnName="CheckInDate" />
+                <ScalarProperty Name="CheckOutDate" ColumnName="CheckOutDate" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_ClientsInfo_DeleteById" FunctionName="LEC2023Model.Store.USP_ClientsInfo_DeleteById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_ClientsInfo_DeleteById_Result">
+                <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+                <ScalarProperty Name="ReturnMessage" ColumnName="ReturnMessage" />
+                <ScalarProperty Name="ReturnParam" ColumnName="ReturnParam" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_ClientsInfo_GetById" FunctionName="LEC2023Model.Store.USP_ClientsInfo_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_ClientsInfo_GetById_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IC_Passport" ColumnName="IC/Passport" />
+                <ScalarProperty Name="Phone_No_" ColumnName="Phone No." />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="BOD" ColumnName="BOD" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_ClientsInfo_GetByStatus" FunctionName="LEC2023Model.Store.USP_ClientsInfo_GetByStatus">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_ClientsInfo_GetByStatus_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ClientIcPassport" ColumnName="ClientIcPassport" />
+                <ScalarProperty Name="ClientPhoneNumber" ColumnName="ClientPhoneNumber" />
+                <ScalarProperty Name="ClientEmail" ColumnName="ClientEmail" />
+                <ScalarProperty Name="ClientGender" ColumnName="ClientGender" />
+                <ScalarProperty Name="ClientBirthDate" ColumnName="ClientBirthDate" />
+                <ScalarProperty Name="ClientAddress" ColumnName="ClientAddress" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_ClientsInfo_Insert" FunctionName="LEC2023Model.Store.USP_ClientsInfo_Insert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_ClientsInfo_Insert_Result">
+                <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+                <ScalarProperty Name="ReturnMessage" ColumnName="ReturnMessage" />
+                <ScalarProperty Name="ReturnParam" ColumnName="ReturnParam" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_ClientsInfo_UpdateById" FunctionName="LEC2023Model.Store.USP_ClientsInfo_UpdateById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_ClientsInfo_UpdateById_Result">
+                <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+                <ScalarProperty Name="ReturnMessage" ColumnName="ReturnMessage" />
+                <ScalarProperty Name="ReturnParam" ColumnName="ReturnParam" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_RoomsInfo_DeleteById" FunctionName="LEC2023Model.Store.USP_RoomsInfo_DeleteById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_RoomsInfo_DeleteById_Result">
+                <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+                <ScalarProperty Name="ReturnMessage" ColumnName="ReturnMessage" />
+                <ScalarProperty Name="ReturnParam" ColumnName="ReturnParam" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_RoomsInfo_GetById" FunctionName="LEC2023Model.Store.USP_RoomsInfo_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_RoomsInfo_GetById_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RoomFloor" ColumnName="RoomFloor" />
+                <ScalarProperty Name="RoomUnitPrice" ColumnName="RoomUnitPrice" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_RoomsInfo_GetByStatus" FunctionName="LEC2023Model.Store.USP_RoomsInfo_GetByStatus">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_RoomsInfo_GetByStatus_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RoomFloor" ColumnName="RoomFloor" />
+                <ScalarProperty Name="RoomUnitPrice" ColumnName="RoomUnitPrice" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_RoomsInfo_Insert" FunctionName="LEC2023Model.Store.USP_RoomsInfo_Insert">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_RoomsInfo_Insert_Result">
+                <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+                <ScalarProperty Name="ReturnMessage" ColumnName="ReturnMessage" />
+                <ScalarProperty Name="ReturnParam" ColumnName="ReturnParam" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_RoomsInfo_UpdateById" FunctionName="LEC2023Model.Store.USP_RoomsInfo_UpdateById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_RoomsInfo_UpdateById_Result">
+                <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+                <ScalarProperty Name="ReturnMessage" ColumnName="ReturnMessage" />
+                <ScalarProperty Name="ReturnParam" ColumnName="ReturnParam" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_BookingsInfo_BookingRoomsDetails_GetByCheckInCheckOutDate" FunctionName="LEC2023Model.Store.USP_BookingsInfo_BookingRoomsDetails_GetByCheckInCheckOutDate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LEC2023Model.USP_BookingsInfo_BookingRoomsDetails_GetByCheckInCheckOutDate_Result">
+                <ScalarProperty Name="AvailableRoomIds" ColumnName="AvailableRoomIds" />
+                <ScalarProperty Name="RoomFloor" ColumnName="RoomFloor" />
+                <ScalarProperty Name="RoomUnitPrice" ColumnName="RoomUnitPrice" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
