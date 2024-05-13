@@ -1,0 +1,140 @@
+﻿@model HotelRoomBookingSystem.Models.BookingsInfo
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Booking | Delete</h2>
+
+<div>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckInDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckInDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckOutDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckOutDate)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    }
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-1 col-xs-3">
+            <a href="@Url.Action("Index")" class="btn btn-info">Back</a>
+        </div>
+        <div>
+            <!-- Button to trigger modal -->
+            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
+        <!-- Modal content -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="deleteModalLabel">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this record?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-danger" id="confirmDelete">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            // Attach a click event handler to the "Yes" button
+            $("#confirmDelete").click(function () {
+
+                // Close the modal
+                $("#deleteModal").modal("hide");
+
+                // Submit the form (perform the delete action)
+                $("form").submit();
+
+            });
+
+            // Submit the form (perform the delete action - DeleteConfirmed ActionResult)
+            $("form").submit(function (event) {
+                event.preventDefault();  // Prevent the default form submission
+                var form = this;
+
+                $.ajax({
+                    url: form.action,
+                    type: form.method,
+                    data: $(form).serialize(),
+                    success: function (data) {
+                        // Check if toast message is set
+                        if (data.success == "1" || data.success == 1) {
+                            //Display a success toast, with a title
+                            toastr.success(data.message, "Success");
+
+                        } else {
+                            // Display an error toast
+                            toastr.error(data.message, "Error");
+                        }
+
+                        // Redirect to the Index page after a delay (e.g., 3 seconds)
+                        setTimeout(function () {
+                            window.location.href = "@Url.Action("Index", "BookingsInfoes")";
+                        }, 3000); // Redirect after 3 seconds (same duration as the notification)
+                    },
+                    error: function () {
+                        // Display a error toast, with a title
+                        toastr.error("An error occurred while deleting the client: " + error, 'Error');
+                    }
+                });
+            });
+        });
+    </script>
+}
