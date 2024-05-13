@@ -1,0 +1,104 @@
+﻿@model HotelRoomBookingSystem.Models.ClientsInfo
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Client | Delete</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Id)</dt>
+        <dd>@Html.DisplayFor(model => model.Id)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ClientName)</dt>
+        <dd>@Html.DisplayFor(model => model.ClientName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ClientIcPassport)</dt>
+        <dd>@Html.DisplayFor(model => model.ClientIcPassport)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ClientPhoneNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.ClientPhoneNumber)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ClientEmail)</dt>
+        <dd>@Html.DisplayFor(model => model.ClientEmail)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ClientGender)</dt>
+        <dd>@Html.DisplayFor(model => model.ClientGender)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ClientBirthDate)</dt>
+        <dd>@Html.DisplayFor(model => model.ClientBirthDate)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ClientAddress)</dt>
+        <dd>@Html.DisplayFor(model => model.ClientAddress)</dd>
+    </dl>
+
+    @using (Html.BeginForm("Delete", "ClientsInfoes", FormMethod.Post, new { id = "deleteForm" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id)
+    }
+    <div class="row">
+        <div class="col-md-offset-1 col-md-1 col-xs-3">
+            <a href="@Url.Action("Index")" class="btn btn-info">Back</a>
+        </div>
+        <div>  <!-- Button to trigger modal -->
+            <button id="deletePageDeleteButton" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+        </div>
+    </div>
+    @Html.Partial("~/Views/_ModalDialogPartialPage.cshtml")  <!-- Modal -->
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        var urlClientList = "@Url.Action("Index", "ClientsInfoes")";
+        var urlSubmit = "@Url.Action("Delete", "ClientsInfoes")";
+
+        @*$(document).ready(function () {
+            // Attach a click event handler to the "Yes" button
+            $("#confirmDelete").click(function () {
+                // Close the modal
+                $("#deleteModal").modal("hide");
+                // Submit the form (perform the delete action - DeleteConfirmed ActionResult)
+                $("form").submit();
+            });
+
+            // Submit the form (perform the delete action - DeleteConfirmed ActionResult)
+            $("form").submit(function (event) {
+                event.preventDefault();  // Prevent the default form submission
+                var form = this;
+
+                $.ajax({
+                    url: form.action,
+                    type: form.method,
+                    data: $(form).serialize(),
+                    success: function (data) {  // data is get from the return JSON data from the controller
+
+                        // Check if toast message is set
+                        if (data.success == "1" || data.success == 1) {
+                            //Display a success toast, with a title
+                            toastr.success(data.message, "Success");
+
+                        } else {
+                            // Display an error toast
+                            toastr.error(data.message, "Error");
+                        }
+
+                        // Redirect to the Index page after a delay (e.g., 3 seconds)
+                        setTimeout(function () {
+                            window.location.href = "@Url.Action("Index", "ClientsInfoes")";
+                        }, 3000); // Redirect after 3 seconds (same duration as the notification)
+                    },
+                    error: function (error) {
+                        // Display a error toast, with a title
+                        toastr.error("An error occurred while deleting the client: " + error, 'Error');
+                    }
+                });
+            });
+        });*@
+</script>
+    <script src="~/Scripts/Form/ClientsInfoScript.js"></script>
+}

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<HotelRoomBookingSystem.Models.ClientsInfo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Client Listing</h1>
+<br />
+@using (Html.BeginForm("Index", "ClientsInfoes", FormMethod.Post, new { id = "searchForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-3 col-xs-6">
+            @Html.Editor("id", "", new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Client ID" } })
+        </div>
+        <div class="col-md-3 col-xs-6">
+            <button class="btn btn-primary">Search</button>
+        </div>
+        <div class="text-right" style="float: right;">
+            @Html.ActionLink("Create New Client", "Create", null, new { @class = "btn btn-info" })
+        </div>
+    </div>
+}
+<br />
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.ClientName)</th>
+            <th>@Html.DisplayNameFor(model => model.ClientIcPassport)</th>
+            <th>@Html.DisplayNameFor(model => model.ClientPhoneNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.ClientEmail)</th>
+            <th>@Html.DisplayNameFor(model => model.ClientGender)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() > 0)
+        {
+            <!-- Loop through clients and display rows -->
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ClientName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ClientIcPassport)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ClientPhoneNumber)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ClientEmail)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ClientGender)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success btn-sm" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                        @Html.ActionLink("Book Now", "Create", "BookingsInfoes", new { id = item.Id }, new { @class = "btn btn-secondary btn-sm active" })
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="12">@ViewBag.ClientNotFound</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<!--
+form-check-inline
+    new { class = "btn btn-success btn-sm form-check-inline" }
+-->
