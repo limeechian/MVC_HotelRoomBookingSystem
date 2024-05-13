@@ -1,0 +1,208 @@
+@model HotelRoomBookingSystem.Models.BookingsInfo
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Style for the error message */
+    /*#errorContainer .error-row td { */
+    .error-row td {
+        background-color: #ffdddd; /* Light red background color */
+        color: #ff0000; /* Red text color */
+        font-weight: bold; /* Bold text */
+        padding: 20px 0 !important;
+    }
+
+</style>
+
+<h2>Booking | New</h2>
+
+
+@using (Html.BeginForm("Create", "BookingsInfoes", FormMethod.Post, new { id = "createBookingForm" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+
+    @if (TempData["ConfirmationMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["ConfirmationMessage"]
+        </div>
+    }
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.RoomIds, new { id = "RoomIds" })
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ClientId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ClientId, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.ClientId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <!-- Check-in Date -->
+    <div class="form-group">
+        @Html.LabelFor(model => model.CheckInDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="date" class="form-control" id="CheckInDate" name="CheckInDate" required />
+            @Html.ValidationMessageFor(model => model.CheckInDate, "", new { @class = "text-danger" })
+            <small class="form-text text-muted">Select the check-in date.</small>
+        </div>
+    </div>
+
+    <!-- Check-out Date -->
+    <div class="form-group">
+        @Html.LabelFor(model => model.CheckOutDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="date" class="form-control" id="CheckOutDate" name="CheckOutDate" required />
+            @Html.ValidationMessageFor(model => model.CheckOutDate, "", new { @class = "text-danger" })
+            <small class="form-text text-muted">Select the check-out date.</small>
+        </div>
+    </div>
+
+    <!-- Display the custom error message here -->
+    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+    {
+        <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+    }
+
+    @*<div id="errorContainer" class="alert alert-danger" style="display: none;"></div>*@
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="button" class="btn btn-info" id="btnSearch">Search Available Rooms</button>
+        </div>
+    </div>
+
+    <br />
+
+    <!-- Available Rooms Table -->
+    <div id="availableRoom">
+        <h4>Available Room(s)</h4>
+        <div class="availableRoomlistingContainer" id="availableRoomlistingContainer">
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="availableRoomsTable" class="table table-bordered table-striped">
+                        <thead class="thead-light">
+                            <tr style="background-color: #f0f0f0;">
+                                <th>
+                                    Room No.
+                                </th>
+                                <th>
+                                    Floor
+                                </th>
+                                <th>
+                                    Unit Price (RM)
+                                </th>
+                                <th width="200px">
+                                    Select Room(s)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-12">
+             <a href="@Url.Action("Index","ClientsInfoes")" class="btn btn-info pull-left">Back</a>
+            <button type="submit" class="btn btn-primary btn-lg" id="bookButton" disabled style="float: right;">Book</button>
+        </div>
+    </div>
+
+
+</div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+<script>
+        $(document).ready(function () {
+            $('#btnSearch').click(function () {
+                var checkInDate = $('#CheckInDate').val();
+                var checkOutDate = $('#CheckOutDate').val();
+
+
+                // Call the controller action to fetch available rooms
+                $.ajax({
+                    url: '@Url.Action("GetAvailableRooms", "BookingsInfoes")', // Adjust the URL as needed
+                    type: 'GET',
+                    data: { checkInDate: checkInDate, checkOutDate: checkOutDate },
+                    success: function (data) {
+                        if (data.error) {
+                            //$('#availableRoom').css('display', 'none');
+                            $('#availableRoomsTable').empty();
+                            var errorRow = '<tr class="error-row"><td colspan="4" class="text-center">' + data.error + '</td></tr>';
+                            $('#availableRoomsTable').append(errorRow);
+                        } else {
+                            // Clear the table
+                            $('#availableRoomsTable').empty();
+
+
+                            // Append the table header
+                            $('#availableRoomsTable').append('<thead class="thead-light">' +
+                                '<tr style="background-color: #f0f0f0;">' +
+                                '<th>Room No.</th>' +
+                                '<th>Floor</th>' +
+                                '<th>Unit Price (RM)</th>' +
+                                '<th width="200px">Select Room(s)</th>' +
+                                '</tr>' +
+                                '</thead>' +
+                                '<tbody>' +
+                                '</tbody>');
+
+
+                            // Append each available room row to the table
+                            $.each(data, function (index, room) {
+                                var row = '<tr style="margin-bottom: 10px;">' +
+                                    '<td>' + room.RoomId + '</td>' +
+                                    '<td>' + room.RoomFloor + '</td>' +
+                                    '<td>' + room.RoomUnitPrice + '</td>' +
+                                    '<td style="text-align: center;"><input type="checkbox" class="roomCheckbox"  data-roomid="' + room.RoomId + '"></td>' +
+                                    '</tr>';
+                                $('#availableRoomsTable tbody').append(row);
+                            });
+
+
+                            // Handle checkbox selections
+                            $('.roomCheckbox').change(function () {
+                                var selectedRoomIds = $('.roomCheckbox:checked').map(function () {
+                                    return $(this).data('roomid');
+                                }).get().join(',');
+
+                                // Enable the Book button if at least one room is selected, otherwise disable it
+                                if (selectedRoomIds.length > 0) {
+                                    $('#bookButton').prop('disabled', false);
+                                } else {
+                                    $('#bookButton').prop('disabled', true);
+                                }
+
+                                // Update the hidden input field value 
+                                $('#RoomIds').val(selectedRoomIds); // Set the hidden input field value
+                            });
+                        }
+                    }
+                });
+            });
+            // Submit the form using AJAX with the ID createBookingForm
+            $('#createBookingForm').submit(function () {
+
+            }); 
+        });
+</script>
+
+}
