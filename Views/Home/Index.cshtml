@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<style>
+    /* Custom CSS for font styles and centering */
+    .centered {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        background-color: azure;
+    }
+
+    .heading {
+        font-size: 36px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .subheading {
+        font-size: 24px;
+        color: #666;
+    }
+
+    .button {
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        background-color: cadetblue;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-top: 20px;
+        text-decoration: none;
+    }
+
+        .button:hover {
+            background-color: darkcyan;
+            text-decoration: none;
+            border: none;
+        }
+</style>
+
+
+
+
+<div class="centered">
+    <div>
+        <h1 class="heading">Welcome to <b>Serenity Sands Retreat</b></h1>
+        <p class="subheading">Hotel Room Booking System</p>
+        <p class="text-muted">Your perfect getaway starts here.</p>
+        <br />
+        <a href="@Url.Action("NewClientRegistration", "Home")" class="button">New Client Registration</a>
+    </div>
+</div>
+
