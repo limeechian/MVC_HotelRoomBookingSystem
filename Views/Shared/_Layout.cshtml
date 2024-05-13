@@ -1,0 +1,80 @@
+<!-- Inside your _Layout.cshtml or similar shared layout -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Serenity Sands Retreat Booking Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="@Url.Content("~/Content/toastr.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/toastr.js")"></script>
+
+
+    <script>
+        toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            positionClass: "toast-top-right",
+            preventDuplicates: true
+        };
+    </script>
+
+</head>
+
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Serenity Sands Retreat", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+                    @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                    <li>@Html.ActionLink("Clients", "Index", "ClientsInfoes")</li>
+                    <li>@Html.ActionLink("Rooms", "Index", "RoomsInfoes")</li>
+                    <li>@Html.ActionLink("Bookings History", "Index", "BookingsInfoes")</li>
+                    <li>@Html.ActionLink("Client Booked Room(s)", "Index", "BookingRoomsDetails")</li>
+                </ul>
+
+                <ul class="nav navbar-nav" style="float:right !important">
+                    @if (Session["Username"] != null)
+                    {
+                        <li><p style="color:lightgray; margin-top:15px;">@Session["Username"].ToString()</p></li>
+                        <li>@Html.ActionLink("Logout", "Logout", "StaffLogin")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "StaffLogin")</li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
